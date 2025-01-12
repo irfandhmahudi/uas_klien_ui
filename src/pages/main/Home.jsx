@@ -2,10 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/Navbar.jsx";
 import { fetchDisasters } from "../../redux/slice/disasterSlice"; // import fetchDisasters dari slice
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { disasters, isLoading, error } = useSelector(
     (state) => state.disasters
@@ -70,11 +69,13 @@ const Home = () => {
                 </p>
               </div>
               <div className="mt-4">
-                <p
-                  onClick={() => navigate(`/detail/${disaster._id}`)}
-                  className="text-sm hover:underline cursor-pointer"
-                >
-                  Read More Information
+                <p className="text-sm hover:underline cursor-pointer">
+                  <Link
+                    to={`/detail/${disaster._id}`}
+                    className="text-sm hover:underline"
+                  >
+                    Read More Information
+                  </Link>
                 </p>
               </div>
             </div>
