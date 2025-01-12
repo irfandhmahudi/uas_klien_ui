@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/Navbar.jsx";
 import { fetchDisasters } from "../../redux/slice/disasterSlice"; // import fetchDisasters dari slice
+import { useNavigate, useParams } from "react-router-dom";
 
 const Home = () => {
+  const { id } = useParams(); // Fetch ID from URL
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { disasters, isLoading, error } = useSelector(
     (state) => state.disasters
@@ -69,9 +72,7 @@ const Home = () => {
               </div>
               <div className="mt-4">
                 <p
-                  onClick={() =>
-                    (window.location.href = `/detail/${disaster._id || ""}`)
-                  }
+                  onClick={() => navigate(`/detail/${id}`)}
                   className="text-sm hover:underline cursor-pointer"
                 >
                   Read More Information
