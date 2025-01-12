@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/img_login.png";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Login = ({ onLogin, isLoading }) => {
   const [email, setEmail] = useState("");
@@ -83,9 +84,9 @@ const Login = ({ onLogin, isLoading }) => {
 
           <p className="text-gray-400 text-sm mt-6 text-center">
             Don{"'"}t have an account?{" "}
-            <a href="/register" className="text-gray-700 hover:underline">
+            <Link to="/register" className="text-gray-700 hover:underline">
               Sign Up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
