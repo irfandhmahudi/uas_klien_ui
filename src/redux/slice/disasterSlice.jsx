@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/v1/disaster"; // Ganti dengan URL API Anda
+const API_URL = "https://uas-klien-api.vercel.app/api/v1/disaster"; // Ganti dengan URL API Anda
 
 // Konfigurasi axios untuk menyertakan kredensial
 const axiosInstance = axios.create({
