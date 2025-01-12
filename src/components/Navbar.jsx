@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import defaultAvatar from "../assets/user.png";
 import { getMe, logoutUser } from "../redux/slice/authSlice";
 
@@ -52,7 +52,11 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 bg-white z-50">
       <div className="flex justify-evenly items-center border-b border-black p-4">
         <div className="text-xl font-bold cursor-pointer">
-          <h1 onClick={() => navigate("/home")}>Prenews</h1>
+          <h1>
+            <Link to="/home" className="text-xl hover:underline">
+              Prenews
+            </Link>
+          </h1>
         </div>
         <div></div>
         <div>
